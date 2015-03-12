@@ -25,7 +25,8 @@ $(document).ready(function() {
 
         for (i = 0; i < results.length; i++) {
           var element = $('<div class="cityname">');
-          $('<a href="http://www.wunderground.com/' + results[i].l + '">' + results[i].name + '</a>').appendTo(element);
+          // $('< href="http://www.wunderground.com/' + results[i].l + '">' + results[i].name + '</a>').appendTo(element);
+          $('<div>' + results[i].name + '</div>').appendTo(element);
           elements.append(element);
         }
         $data.html(elements);
@@ -39,7 +40,7 @@ $(document).ready(function() {
     console.log($(name).text());
   });
 
-  $(document.body).on('click', '#big-city-name', function() {
+  $(document.body).on('click', '.cityname', function() {
     var name = $(this).text();
     var api_string = 'http://api.wunderground.com/api/ae7a0ed513dc18de/conditions/q/' + name + '.json';
     console.log(api_string);
