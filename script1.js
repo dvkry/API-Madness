@@ -54,7 +54,7 @@ $(document).ready(function() {
         console.log(response)
         var results = response.current_observation;
         console.log(results);
-        var conditions_string = "<h1>Weather: " + results.weather + ", Temperature: " + results.temp_c + '</h1>';
+        var conditions_string = "<h1>" + name + ":  Weather: " + results.weather + ", Temperature: " + results.temp_c + '</h1>';
         $('#weather_data').html(conditions_string).append('<img src="' + results.icon_url + '">');
 
       }
